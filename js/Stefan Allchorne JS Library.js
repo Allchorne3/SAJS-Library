@@ -124,3 +124,31 @@ function if_in_view(element, className) {
     })
 }
 // TO CALL if_in_view(element, 'ClassName'); | E.g. if_in_view(slideIn, 'appear');
+
+
+//===============================================
+// 5. CHANGE OPACITY ON SCROLL
+//===============================================
+
+function opacityFade(element) {
+    var fadeStart = 200; // How many pixels scrolled until fade starts
+    var fadeUntil = 600; // How many pixels the fade out will last
+    var elementToFade = $(element);
+
+    var wScroll = $(document).scrollTop();
+
+        // Create a variable to store a value for opacity
+        var opacity = 0;
+
+        // If you are scrolled down less than or equal to the amount initialised in fadeStart above (100px) then keep the element at opacity of 1
+        if(wScroll <= fadeStart ){
+            opacity = 1;
+        // Otherwise if you are scrolled down more than 
+        } else if(wScroll <= fadeUntil){
+            opacity = 1 - wScroll/fadeUntil;
+        }
+    
+        elementToFade.css('opacity', opacity).html(opacity);
+}
+
+// TO CALL opacityFade('element'); | E.g. opacityFade('#fading');
