@@ -14,7 +14,8 @@ $(window).scroll(function(){
 //===============================================
 function elementPara(div, speed){
 	var wScroll = $(this).scrollTop();
-	$(div).css({'transform':'translate(-50%, '+ -wScroll/speed +'px)'});
+	$(element).css({'transform':'translate(0px, -'+ wScroll/speed +'%)'});
+	$(element).css({'transform':'rotate('+ wScroll/speed +'deg)'});
 }
 // TO CALL: elementPara('Element Name', Speed) | E.G. elementPara('.headerList', 5);
 
